@@ -25,7 +25,6 @@ K:\wt-apps\WarthunderCockpitAlerts\bin\Debug\Newtonsoft.Json.dll
 K:\wt-apps\WarthunderCockpitAlerts\bin\Debug\Newtonsoft.Json.xml
 K:\wt-apps\WarthunderCockpitAlerts\bin\Debug\Interop.WMPLib.dll
 K:\wt-apps\WarthunderCockpitAlerts\bin\Debug\AxInterop.WMPLib.dll
-K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.vbprojAssemblyReference.cache
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\Interop.WMPLib.dll
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\AxInterop.WMPLib.dll
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.vbproj.ResolveComReference.cache
@@ -37,3 +36,4 @@ K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.vbproj.Copy
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.exe
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.xml
 K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.pdb
+K:\wt-apps\WarthunderCockpitAlerts\obj\Debug\WarthunderCockpitAlerts.vbprojAssemblyReference.cache

@@ -53,6 +53,78 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_stallspeed() As String
+            Get
+                Return CType(Me("ntxt_stallspeed"),String)
+            End Get
+            Set
+                Me("ntxt_stallspeed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_Vario_value() As String
+            Get
+                Return CType(Me("ntxt_Vario_value"),String)
+            End Get
+            Set
+                Me("ntxt_Vario_value") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_gforce() As String
+            Get
+                Return CType(Me("ntxt_gforce"),String)
+            End Get
+            Set
+                Me("ntxt_gforce") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_neggforce() As String
+            Get
+                Return CType(Me("ntxt_neggforce"),String)
+            End Get
+            Set
+                Me("ntxt_neggforce") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_wingoverload() As String
+            Get
+                Return CType(Me("ntxt_wingoverload"),String)
+            End Get
+            Set
+                Me("ntxt_wingoverload") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ntxt_gdowntxt() As String
+            Get
+                Return CType(Me("ntxt_gdowntxt"),String)
+            End Get
+            Set
+                Me("ntxt_gdowntxt") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
