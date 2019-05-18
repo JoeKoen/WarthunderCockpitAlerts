@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.txt_StatusLable = New System.Windows.Forms.Label()
         Me.txt_GameStatus = New System.Windows.Forms.Label()
         Me.cb_gforcelimit = New System.Windows.Forms.CheckBox()
@@ -182,6 +183,7 @@ Partial Class Form1
         Me.cb_stallingangle.TabIndex = 2
         Me.cb_stallingangle.Text = "Stalling Angle"
         Me.cb_stallingangle.UseVisualStyleBackColor = True
+        Me.cb_stallingangle.Visible = False
         '
         'GroupBox2
         '
@@ -216,6 +218,7 @@ Partial Class Form1
         Me.ntxt_stallangle.Size = New System.Drawing.Size(64, 29)
         Me.ntxt_stallangle.TabIndex = 3
         Me.ntxt_stallangle.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        Me.ntxt_stallangle.Visible = False
         '
         'cb_stallspeed
         '
@@ -250,6 +253,7 @@ Partial Class Form1
         Me.ntxt_gdowntxt.Size = New System.Drawing.Size(78, 29)
         Me.ntxt_gdowntxt.TabIndex = 3
         Me.ntxt_gdowntxt.Value = New Decimal(New Integer() {512, 0, 0, 0})
+        Me.ntxt_gdowntxt.Visible = False
         '
         'cb_gearsdownthreshhold
         '
@@ -261,6 +265,7 @@ Partial Class Form1
         Me.cb_gearsdownthreshhold.TabIndex = 2
         Me.cb_gearsdownthreshhold.Text = "Gears Down Threshold Alarm"
         Me.cb_gearsdownthreshhold.UseVisualStyleBackColor = True
+        Me.cb_gearsdownthreshhold.Visible = False
         '
         'cb_gearsdownalarm
         '
@@ -346,6 +351,7 @@ Partial Class Form1
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Save"
+        Me.GroupBox5.Visible = False
         '
         'bt_appsave
         '
@@ -369,7 +375,6 @@ Partial Class Form1
         'sensor_timer
         '
         Me.sensor_timer.Enabled = True
-        Me.sensor_timer.Interval = 10
         '
         'indicators_worker
         '
@@ -389,11 +394,12 @@ Partial Class Form1
         'debug_lable
         '
         Me.debug_lable.AutoSize = True
-        Me.debug_lable.Location = New System.Drawing.Point(6, 61)
+        Me.debug_lable.Location = New System.Drawing.Point(139, 26)
         Me.debug_lable.Name = "debug_lable"
         Me.debug_lable.Size = New System.Drawing.Size(33, 25)
         Me.debug_lable.TabIndex = 1
         Me.debug_lable.Text = "---"
+        Me.debug_lable.Visible = False
         '
         'ComboBox1
         '
@@ -427,6 +433,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.SlateGray
         Me.ClientSize = New System.Drawing.Size(571, 515)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
@@ -440,7 +447,9 @@ Partial Class Form1
         Me.Controls.Add(Me.txt_GameStatus)
         Me.Controls.Add(Me.txt_StatusLable)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "USAF 2017 Flight Instructor Aliza - WT VC Sounds"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

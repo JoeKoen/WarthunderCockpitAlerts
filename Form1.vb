@@ -16,6 +16,8 @@ Public Class Form1
     Dim IAS_value As Integer
     Dim Altitude_value As Integer
     Dim Altitude_value_cali As Integer
+    Dim Vy As Integer
+
 
 
     Private Sub Sensor_timer_Tick(sender As Object, e As EventArgs) Handles sensor_timer.Tick
@@ -92,12 +94,13 @@ Public Class Form1
 
 
 
+
             ' Gears are down
             Try
                 If cb_gearsdownalarm.CheckState = CheckState.Checked Then
                     Dim myPlayer As System.Media.SoundPlayer
                     myPlayer = New System.Media.SoundPlayer(My.Resources.GearDown)
-                    If gears_value >= 0 AndAlso Altitude_value >= Altitude_value_cali + 100 Then
+                    If gears_value > 0 AndAlso Altitude_value > Altitude_value_cali + 100 Then
                         myPlayer.Stop()
                         myPlayer.PlaySync()
                     Else
@@ -171,8 +174,11 @@ Public Class Form1
         '' IAS
 
         IAS_value = jResults("IAS, km/h").ToString()
+        Vy = jResults("Vy, m/s").ToString()
         ' debug lable
-        debug_lable.Text = IAS_value
+        Dim Vspeed As Decimal = Convert.ToDecimal(Vy)
+        debug_lable.Text = (0 - Vspeed * (2 + Math.Pow(IAS_value / 100, 0.7))).ToString & " > " & (Altitude_value_cali + 200).ToString & vbNewLine &
+            " AndAlso " & Altitude_value & " + 1500 (" & Altitude_value & " <= " & (Altitude_value_cali + 1500).ToString & ") -- " & (Altitude_value <= Altitude_value_cali + 1500).ToString
 
         Try
             If cb_wingoverload.CheckState = CheckState.Checked Then
@@ -188,11 +194,26 @@ Public Class Form1
             If cb_stallspeed.CheckState = CheckState.Checked Then
                 Dim G2 As System.Media.SoundPlayer
                 G2 = New System.Media.SoundPlayer(My.Resources.MinimumSpeed)
-                If IAS_value <= ntxt_stallspeed.Value AndAlso Altitude_value.ToString > Altitude_value_cali.ToString + 100 Then
+                If IAS_value <= ntxt_stallspeed.Value AndAlso Altitude_value.ToString > Altitude_value_cali + 75 Then
                     G2.Stop()
                     G2.PlaySync()
                 Else
                     G2.Stop()
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        '' Ground prox warning
+        Try
+            If cb_groundprx.CheckState = CheckState.Checked Then
+                Dim F1 As System.Media.SoundPlayer
+                F1 = New System.Media.SoundPlayer(My.Resources.negG)
+                If 0 - Vspeed * (2 + Math.Pow(IAS_value / 100, 0.7)) > Altitude_value_cali + 200 AndAlso Altitude_value <= Altitude_value_cali + 1500 Then
+                    F1.PlaySync()
+                Else
+                    F1.Stop()
                 End If
             End If
         Catch ex As Exception
